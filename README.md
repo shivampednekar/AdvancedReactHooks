@@ -13,6 +13,6 @@
 
   The main topics of this section are adaptive layout and styled components. We are building the hero section. First, we have a card and then, we have a stack that contains a logo, some text, and a purchase button.
 
-  - ### Basic Hooks <br>
+- ### Basic Hooks <br>
 
   In this section, we're going to talk about hooks and how to use them to trigger an animation. The main focus on this section is the course card.
