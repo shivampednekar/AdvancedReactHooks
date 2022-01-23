@@ -24,3 +24,7 @@
 - ### Hooks Libraries <br>
 
   In this section, we will discuss about React Hooks Libraries. You may prefer to use hooks libraries instead of coding a custom hook as we did in the previous section.
+
+- ### Grid Layout <br>
+
+  In this section, we will design rows and add them to a grid layout. It is possible to use grids to provide structure to different types of websites, including blogs, portfolio websites, news websites, and social networking sites. The grid layout is a set of rows and columns that helps web page designers design without having to use positioning and floats.
