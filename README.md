@@ -28,3 +28,7 @@
 - ### Grid Layout <br>
 
   In this section, we will design rows and add them to a grid layout. It is possible to use grids to provide structure to different types of websites, including blogs, portfolio websites, news websites, and social networking sites. The grid layout is a set of rows and columns that helps web page designers design without having to use positioning and floats.
+
+- ### Static Data <br>
+
+  The purpose of this section is to discuss static data. We created a section row in the previous section, and we clearly have a problem since they all have the same title, description, and timestamp. Since it is hardcoded, it is normal. We will use props, statically loaded data, and map method.

@@ -1,19 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 
-function SectionRows() {
+function SectionRows(props) {
+  const { index, title, description, timestamp } = props
+
   return (
     <Wrapper>
-      <Index>1</Index>
+      <Index>{index}</Index>
       <TextWrapper>
-        <Title>Intro to Advanced React Hooks</Title>
+        <Title>{title}</Title>
         <ProgressBar />
-        <Description>
-          Learn how to build a website with Typescript, Hooks, Contentful and
-          Gatsby Cloud
-        </Description>
+        <Description>{description}</Description>
       </TextWrapper>
-      <TimeStamp>12:47</TimeStamp>
+      <TimeStamp>{timestamp}</TimeStamp>
     </Wrapper>
   )
 }

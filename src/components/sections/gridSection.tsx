@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import SectionRows from "../UI/Rows/sectionRows"
+import { sections } from "../../data/sectionData"
 
 const GridSection = () => {
   return (
@@ -12,9 +13,14 @@ const GridSection = () => {
         so that you can easily follow in a cohesive way.
       </Description>
       <Grid>
-        <SectionRows />
-        <SectionRows />
-        <SectionRows />
+        {sections.map((section, index) => (
+          <SectionRows
+            index={index + 1}
+            title={section.title}
+            description={section.description}
+            timestamp={section.duration}
+          />
+        ))}
       </Grid>
     </Wrapper>
   )
@@ -52,10 +58,18 @@ const Description = styled.p`
 const Grid = styled.div`
   background: rgba(255, 255, 255, 0.6);
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px;
   padding: 20px;
   box-sizing: border-box;
   border: 0.5px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
   box-shadow: 0px 50px 100px rgba(34, 79, 169, 0.3);
   backdrop-filter: blur(40px);
+
+  @media (max-width: 500px) {
+    padding: 10px;
+    /* margin: 0 auto; */
+  }
 `
