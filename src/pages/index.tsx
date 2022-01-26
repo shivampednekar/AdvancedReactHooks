@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import { useWindowSize } from "react-use"
 
@@ -7,20 +8,22 @@ import CourseCard from "../components/UI/Cards/courseCard"
 import FlutterBuild from "../components/UI/builds/flutterBuilds"
 import GridSection from "../components/sections/gridSection"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const { width } = useWindowSize()
+
+  const title = data.allContentfulCourse.edges[0].node.title
+  const description = data.allContentfulCourse.edges[0].node.description
+  console.log(description)
+
   return (
     <Container>
       <HeroContainer>
         <CourseCard />
         <TextWrapper>
           <Logo src="/images/logos/react-logo.svg" alt="lan logo" />
-          <Title>Advanced React Hooks</Title>
+          <Title>{title}</Title>
           <Caption>20 SECTIONS - 5 HOURS OF VIDEO</Caption>
-          <Description>
-            Learn how to build a website with Typescript, Hooks, Contentful and
-            Gatsby Cloud
-          </Description>
+          <Description>{description}</Description>
           <AuthorWrapper>
             <AuthorImage src="/images/avatars/Meng.png" alt="Author Image" />
             <Caption>Taught by Meng To</Caption>
@@ -43,6 +46,26 @@ const IndexPage = () => {
 
 export default IndexPage
 
+// QUERY
+export const query = graphql`
+  query IndexPageQuery {
+    allContentfulCourse {
+      edges {
+        node {
+          title
+          description
+          sections {
+            title
+            description
+            duration
+          }
+        }
+      }
+    }
+  }
+`
+
+// STYLED
 const Container = styled.div`
   /* height: 1427px; */
   background: #005c97; /* fallback for old browsers */

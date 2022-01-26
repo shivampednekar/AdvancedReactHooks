@@ -32,3 +32,7 @@
 - ### Static Data <br>
 
   The purpose of this section is to discuss static data. We created a section row in the previous section, and we clearly have a problem since they all have the same title, description, and timestamp. Since it is hardcoded, it is normal. We will use props, statically loaded data, and map method.
+
+- ### Contentful CMS <br>
+
+  In the previous section, we talked about static data, storing them in the project, retrieving them and display on the UI. This flow is very good for a small amount of content but not scalable at all.

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Design+Code`,
@@ -12,6 +16,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_TOKEN, //process.env.CONTENTFUL_ACCESS_TOKEN
+        // Learn about environment variables: https://gatsby.dev/env-vars
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,9 +45,5 @@ module.exports = {
         icon: `static/images/favicons.png`, // This path is relative to the root of the site.
       },
     },
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
